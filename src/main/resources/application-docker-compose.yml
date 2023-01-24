@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: docker-compose
+  rabbitmq:
+    host: rabbitmq
+  datasource:
+    url: jdbc:postgresql://db:5432/compose-postgres
+    username: compose-postgres
+    password: compose-postgres
+  redis:
+    host: redis
+    port: 6379

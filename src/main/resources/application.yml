@@ -1,0 +1,25 @@
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    properties:
+      hibernate:
+        show_sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driverClassName: org.postgresql.Driver
+
+rabbit:
+  queue: EMAIL_SENDING_TASKS
+  exchange: exchange
+  routing-key: TaskTrackerKey
+
+server:
+  error:
+    include-message: always
+    include-binding-errors: always

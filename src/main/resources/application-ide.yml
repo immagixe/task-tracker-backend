@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: ide
+  rabbitmq:
+    host: localhost
+    port: 5672
+  datasource:
+    url: jdbc:postgresql://localhost:5432/compose-postgres
+    username: compose-postgres
+    password: compose-postgres
+  redis:
+    host: localhost
+    port: 6379
