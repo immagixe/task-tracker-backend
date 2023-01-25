@@ -25,15 +25,14 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/task-tracker-backend:1.0 
-      - 
-        name: Trigger deploy
-        uses: actions/github-script@v6
+      -     
+        name: Deploy Stage
+        uses: actions/github-script@v5
         with:
-          github-token: ${{ secrets.GHA_WORKFLOW_TRIGGER }}
-          script: |
-            const result = await github.rest.actions.createWorkflowDispatch({
-              owner: 'immagixe',
-              repo: 'task-tracker-stack',
-              workflow_id: 'deploy.yml',
-              ref: 'main'
-            })
+           script: |
+            await github.rest.actions.createWorkflowDispatch({
+            'immagixe',
+            'task-tracker-stack',
+            '.github/workflows/deploy.yml',
+            'main',
+            });
