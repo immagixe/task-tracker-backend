@@ -34,5 +34,5 @@ jobs:
             'immagixe',
             'task-tracker-stack',
             '.github/workflows/deploy.yml',
-            'main',
+            'main'
             });
