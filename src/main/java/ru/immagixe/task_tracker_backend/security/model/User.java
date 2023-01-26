@@ -20,10 +20,10 @@ import java.util.List;
 @NoArgsConstructor
 public class User implements Serializable {
 
-    @ApiModelProperty(hidden = true)
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty(hidden = true)
     private int id;
 
     @NotEmpty(message = "Email must not be empty")
@@ -39,8 +39,8 @@ public class User implements Serializable {
     @Column(name = "role")
     private String role;
 
-    @ApiModelProperty(hidden = true)
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    @ApiModelProperty(hidden = true)
     private List<Task> tasks;
 
     public User(String email, String password) {
