@@ -23,7 +23,7 @@ import java.util.Map;
 
 @OpenAPIDefinition(info = @Info(
         title = "Планировщик задач",
-        description = "<H4>Проект с микросервисной архитектурой с применением CI/CD</H4>"),
+        description = "<H4>Проект с микросервисной архитектурой и с применением CI/CD!</H4>"),
         servers = {@Server(url = "http://localhost:8080", description = "Local server")})
 @Tag(name = "Регистрация", description = "Точка входа для регистрации пользователя")
 @RestController
