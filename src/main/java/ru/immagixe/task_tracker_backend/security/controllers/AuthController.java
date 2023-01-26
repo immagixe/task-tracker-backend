@@ -30,7 +30,7 @@ import java.util.Map;
 @Tag(name = "Регистрация", description = "Точка входа для регистрации пользователя")
 @RestController
 //@CrossOrigin("http://localhost:63342/")
-@CrossOrigin("http://195.133.145.60:8080/")
+//@CrossOrigin("http://195.133.145.60:8080/")
 @RequiredArgsConstructor
 public class AuthController {
 
