@@ -24,7 +24,9 @@ import java.util.Map;
 @OpenAPIDefinition(info = @Info(
         title = "Планировщик задач",
         description = "<H4>Проект с микросервисной архитектурой и с применением CI/CD!</H4>"),
-        servers = {@Server(url = "http://localhost:8080", description = "Local server")})
+        servers = {@Server(url = "http://localhost:8080", description = "Local server"),
+                @Server(url = "http://195.133.145.60:8080", description = "Remote server")})
+
 @Tag(name = "Регистрация", description = "Точка входа для регистрации пользователя")
 @RestController
 //@CrossOrigin("http://localhost:63342/")
