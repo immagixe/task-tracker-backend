@@ -3,6 +3,7 @@ package ru.immagixe.task_tracker_backend.tasklogic.controllers;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Tag(name = "Планировщик задач", description = "Точка входа для работы с задачами пользователя")
-@CrossOrigin("http://localhost:63342/")
+@CrossOrigin("http://localhost:80/")
 @RestController
 @SecurityRequirement(name = "basicAuth")
 public class TaskController extends TaskControllerValidate {

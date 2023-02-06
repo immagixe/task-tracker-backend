@@ -35,18 +35,6 @@ public class Task implements Serializable {
     private LocalDateTime modified;
 
     @ManyToOne
-//    @JsonIgnore
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User owner;
-
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", header='" + header + '\'' +
-                ", description='" + description + '\'' +
-                ", statusActive=" + statusActive +
-                ", " +
-                '}';
-    }
 }

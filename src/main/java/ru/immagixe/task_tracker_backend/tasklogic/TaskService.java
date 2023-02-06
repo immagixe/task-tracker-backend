@@ -8,10 +8,8 @@ import org.springframework.web.server.ResponseStatusException;
 import ru.immagixe.task_tracker_backend.tasklogic.model.Task;
 import ru.immagixe.task_tracker_backend.tasklogic.repositories.TaskRepository;
 import ru.immagixe.task_tracker_backend.security.model.User;
-import ru.immagixe.task_tracker_backend.security.repositories.UserRepository;
 
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,12 +17,10 @@ import java.util.Optional;
 public class TaskService {
 
     private final TaskRepository taskRepository;
-    private final UserRepository userRepository;
 
     @Autowired
-    public TaskService(TaskRepository taskRepository, UserRepository userRepository) {
+    public TaskService(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
-        this.userRepository = userRepository;
     }
 
     public Task findById(int userId) {
@@ -53,10 +49,5 @@ public class TaskService {
     @Transactional
     public void delete(int taskId) {
         taskRepository.deleteById(taskId);
-    }
-
-    private List<Task> getUserTasks(int userId) {
-        Optional<User> userFromDataBase = userRepository.findById(userId);
-        return userFromDataBase.isPresent() ? userFromDataBase.get().getTasks() : Collections.emptyList();
     }
 }
